@@ -54,7 +54,7 @@
                 android:layout_marginEnd="@dimen/vs_5"
                 android:layout_marginRight="@dimen/vs_5"
                 android:paddingRight="@dimen/vs_10"
-                android:text="播放☞"
+                android:text="播放:"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_24" />
 
@@ -168,7 +168,7 @@
                 android:layout_marginEnd="@dimen/vs_5"
                 android:layout_marginRight="@dimen/vs_5"
                 android:padding="@dimen/vs_10"
-                android:text=" 片头尾☞"
+                android:text=" 片头尾:"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_24" />
 
