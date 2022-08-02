@@ -21,4 +21,5 @@ This repo relies on the following third-party projects:
 - [takagen99/TVBoxOSC](https://github.com/takagen99/TVBoxOSC)
 
 
+- [唐三 gitea/dxa/1](https://gitea.com/dxa/1)
 - [plutoPlayer](https://github.com/pluto-player/updates)
