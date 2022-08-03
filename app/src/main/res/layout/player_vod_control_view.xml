@@ -35,7 +35,7 @@
                 android:text="播放:"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_24" />
-            <!--添加 下集⏭/上集⏮ 按钮-->
+            <!--添加 下集/上集 按钮-->
             <TextView
                 android:id="@+id/play_next"
                 android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text="⏭"
+                android:text="⇛"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_24" />
 
@@ -58,7 +58,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text="⏮"
+                android:text="⇚"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_24" />
             <!--添加重播↪️按钮-->
