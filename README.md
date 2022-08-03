@@ -8,7 +8,7 @@
 # TVBoxOSC
 ![Build](https://shields.io/github/workflow/status/lqinyli/TVBoxOSC-2/Test?logo=github&label=Build)
 [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/tvbox_stv)
-[![STV⬇️](https://img.shields.io/github/v/releases/lqinyli/TVBoxOSC-2?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/lqinyli/TVBoxOS-2/releases)
+[![STV⬇️](https://img.shields.io/github/v/release/lqinyli/TVBoxOSC-2?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/lqinyli/TVBoxOS-2/releases)
 [![STV*Total](https://shields.io/github/downloads/lqinyli/TVBoxOSC-2/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/lqinyli/TVBoxOS-2/releases)
 - [TVBox-takagen99](https://github.com/lqinyli/TVBox-takagen99)
 
