@@ -37,19 +37,6 @@
                 android:textSize="@dimen/ts_24" />
             <!--添加 下集/上集 按钮-->
             <TextView
-                android:id="@+id/play_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/vs_5"
-                android:layout_marginRight="@dimen/vs_5"
-                android:background="@drawable/button_dialog_main"
-                android:focusable="true"
-                android:padding="@dimen/vs_10"
-                android:text="⇛"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/ts_24" />
-
-            <TextView
                 android:id="@+id/play_pre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +45,20 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text="⇚"
+                android:text="|◀"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/ts_24" />
+
+            <TextView
+                android:id="@+id/play_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/vs_5"
+                android:layout_marginRight="@dimen/vs_5"
+                android:background="@drawable/button_dialog_main"
+                android:focusable="true"
+                android:padding="@dimen/vs_10"
+                android:text="▶|"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_24" />
             <!--添加重播↪️按钮-->
