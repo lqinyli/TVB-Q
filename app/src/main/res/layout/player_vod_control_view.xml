@@ -45,7 +45,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text="|◀"
+                android:text="Ⅰ◀"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_24" />
 
@@ -58,7 +58,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text="▶|"
+                android:text="▶Ⅰ"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_24" />
             <!--添加重播↪️按钮-->
