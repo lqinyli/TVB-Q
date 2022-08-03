@@ -5,11 +5,11 @@
 [![Total](https://shields.io/github/downloads/o0HalfLife0o/TVBoxOSC/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/o0HalfLife0o/TVBoxOSC/releases)
 
 
-# TVBox-STV
+# TVBoxOSC
 ![Build](https://shields.io/github/workflow/status/lqinyli/TVBoxOSC-2/Test?logo=github&label=Build)
 [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/tvbox_stv)
-[![STV⬇️](https://img.shields.io/github/v/release/o0HalfLife0o/TVBoxOSC?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/lqinyli/TVBoxOS-2/releases/latest)
-[![STV*Total](https://shields.io/github/downloads/o0HalfLife0o/TVBoxOSC/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/lqinyli/TVBoxOSC-2/releases)
+[![STV⬇️](https://img.shields.io/github/v/release/lqinyli/TVBoxOSC-2?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/lqinyli/TVBoxOS-2/releases/latest)
+[![STV*Total](https://shields.io/github/downloads/lqinyli/TVBoxOSC-2/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/lqinyli/TVBoxOSC-2/releases)
 - [TVBox-takagen99](https://github.com/lqinyli/TVBox-takagen99)
 
 + Updated Commit: 226ca9ca1c010d4452d0bf58559338d76024728d
