@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_6200EE">#6200EE</color>
+    <color name="color_CCCCFFE5">#CCCCFFE5</color>
+    <color name="color_66B2FF">#66B2FF</color>
+    <color name="color_1BF51B">#1BF51B</color>
+    <color name="color_66FFB2">#66FFB2</color>
+    <color name="color_33FF99">#33FF99</color>
+    <color name="color_E62CE9B7">#E62CE9B7</color>
     <color name="color_3700B3">#3700B3</color>
     <color name="color_03DAC5">#03DAC5</color>
     <color name="color_1890FF">#1890FF</color>
