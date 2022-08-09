@@ -782,7 +782,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="关于"
+                        android:text="版本号"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_24" />
 
@@ -796,7 +796,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/vs_10"
                         android:layout_marginLeft="@dimen/vs_10"
-                        android:text=">"
+                        android:text="1.0.2"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
