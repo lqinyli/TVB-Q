@@ -104,7 +104,7 @@ public class VodController extends BaseController {
 
     Handler myHandle;
     Runnable myRunnable;
-    int myHandleSeconds = 6000;//闲置多少毫秒秒关闭底栏  默认6秒
+    int myHandleSeconds = 8000;//闲置多少毫秒秒关闭底栏  默认8秒
 
     @Override
     protected void initView() {
@@ -356,8 +356,8 @@ public class VodController extends BaseController {
                     int step = Hawk.get(HawkConfig.PLAY_TIME_STEP, 5);
                     int st = mPlayerConfig.getInt("st");
                     st += step;
-                    //片头最大跳过时间10分钟
-                    if (st > 60 * 10)
+                    //片头最大跳过时间5分钟
+                    if (st > 60 * 5)
                         st = 0;
                     mPlayerConfig.put("st", st);
                     updatePlayerCfgView();
@@ -390,8 +390,8 @@ public class VodController extends BaseController {
                     int step = Hawk.get(HawkConfig.PLAY_TIME_STEP, 5);
                     int et = mPlayerConfig.getInt("et");
                     et += step;
-                    //片尾最大跳过时间10分钟
-                    if (et > 60 * 10)
+                    //片尾最大跳过时间5分钟
+                    if (et > 60 * 5)
                         et = 0;
                     mPlayerConfig.put("et", et);
                     updatePlayerCfgView();
