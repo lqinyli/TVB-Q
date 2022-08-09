@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
 <!--    进度条圆点按压状态颜色-->
-<!--    <solid android:color="@color/color_03DAC5" />-->
-    <solid android:color="@color/color_1890FF" />
+<!--    <solid android:color="@color/color_33FF99" />-->
+    <solid android:color="@color/color_33FF99" />
     <size
         android:width="@dimen/vs_30"
         android:height="@dimen/vs_30" />
