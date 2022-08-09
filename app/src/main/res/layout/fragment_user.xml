@@ -39,8 +39,8 @@
                 android:layout_width="@dimen/vs_50"
                 android:layout_height="@dimen/vs_50"
                 android:layout_gravity="center"
-                android:alpha="0.75"
-                android:src="@drawable/icon_history" />
+                android:alpha="0.85"
+                android:src="@drawable/icon_lishi" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,10 +50,10 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:gravity="center"
-                android:text="历史"
+                android:text="历史  "
                 android:textAlignment="gravity"
                 android:textColor="@color/color_CCFFFFFF"
-                android:textSize="@dimen/ts_40" />
+                android:textSize="@dimen/ts_32" />
 
         </LinearLayout>
 
@@ -78,8 +78,8 @@
                 android:layout_width="@dimen/vs_50"
                 android:layout_height="@dimen/vs_50"
                 android:layout_gravity="center"
-                android:alpha="0.75"
-                android:src="@drawable/icon_live" />
+                android:alpha="0.85"
+                android:src="@drawable/icon_zhibo" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -89,10 +89,10 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:gravity="center"
-                android:text="直播"
+                android:text="直播  "
                 android:textAlignment="gravity"
                 android:textColor="@color/color_CCFFFFFF"
-                android:textSize="@dimen/ts_40" />
+                android:textSize="@dimen/ts_32" />
 
         </LinearLayout>
 
@@ -117,8 +117,8 @@
                 android:layout_width="@dimen/vs_50"
                 android:layout_height="@dimen/vs_50"
                 android:layout_gravity="center"
-                android:alpha="0.75"
-                android:src="@drawable/icon_search" />
+                android:alpha="0.85"
+                android:src="@drawable/icon_sousuo" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -128,10 +128,10 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:gravity="center"
-                android:text="搜索"
+                android:text="搜索  "
                 android:textAlignment="gravity"
                 android:textColor="@color/color_CCFFFFFF"
-                android:textSize="@dimen/ts_40" />
+                android:textSize="@dimen/ts_32" />
 
         </LinearLayout>
 
@@ -157,8 +157,8 @@
                 android:layout_width="@dimen/vs_50"
                 android:layout_height="@dimen/vs_50"
                 android:layout_gravity="center"
-                android:alpha="0.75"
-                android:src="@drawable/icon_push" />
+                android:alpha="0.85"
+                android:src="@drawable/icon_tuisong" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -168,10 +168,10 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:gravity="center"
-                android:text="推送"
+                android:text="推送  "
                 android:textAlignment="gravity"
                 android:textColor="@color/color_CCFFFFFF"
-                android:textSize="@dimen/ts_40" />
+                android:textSize="@dimen/ts_32" />
 
         </LinearLayout>
 
@@ -196,8 +196,8 @@
                 android:layout_width="@dimen/vs_50"
                 android:layout_height="@dimen/vs_50"
                 android:layout_gravity="center"
-                android:alpha="0.75"
-                android:src="@drawable/icon_collect" />
+                android:alpha="0.85"
+                android:src="@drawable/icon_shoucan" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -207,10 +207,10 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:gravity="center"
-                android:text="收藏"
+                android:text="收藏  "
                 android:textAlignment="gravity"
                 android:textColor="@color/color_CCFFFFFF"
-                android:textSize="@dimen/ts_40" />
+                android:textSize="@dimen/ts_32" />
 
         </LinearLayout>
 
@@ -236,8 +236,8 @@
                 android:layout_width="@dimen/vs_50"
                 android:layout_height="@dimen/vs_50"
                 android:layout_gravity="center"
-                android:alpha="0.75"
-                android:src="@drawable/icon_setting" />
+                android:alpha="0.85"
+                android:src="@drawable/icon_shezhi" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -247,10 +247,10 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:gravity="center"
-                android:text="设置"
+                android:text="设置  "
                 android:textAlignment="gravity"
                 android:textColor="@color/color_CCFFFFFF"
-                android:textSize="@dimen/ts_40" />
+                android:textSize="@dimen/ts_32" />
 
         </LinearLayout>
 
