@@ -28,9 +28,8 @@
             android:gravity="left|center_vertical"
             android:text="@string/app_name"
             android:textAlignment="gravity"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_30"
-            android:textStyle="bold" />
+            android:textColor="@color/color_CCFFFFFF"
+            android:textSize="@dimen/ts_28" />
 
         <TextView
             android:id="@+id/tvDate"
@@ -41,7 +40,7 @@
             android:focusableInTouchMode="false"
             android:gravity="right|center_vertical"
             android:textAlignment="gravity"
-            android:textColor="@android:color/white"
+            android:textColor="@color/color_CCFFFFFF"
             android:textSize="@dimen/ts_28"
             tools:text="111111111111111" />
     </LinearLayout>
