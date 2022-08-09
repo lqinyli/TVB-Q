@@ -2,11 +2,13 @@
 <resources>
     <dimen name="ts_16">16mm</dimen>
     <dimen name="ts_20">20mm</dimen>
+    <dimen name="ts_21">21mm</dimen>
     <dimen name="ts_22">22mm</dimen>
     <dimen name="ts_24">24mm</dimen>
     <dimen name="ts_26">26mm</dimen>
     <dimen name="ts_28">28mm</dimen>
     <dimen name="ts_30">30mm</dimen>
+    <dimen name="ts_32">32mm</dimen>
     <dimen name="ts_34">34mm</dimen>
     <dimen name="ts_40">40mm</dimen>
     <dimen name="ts_50">50mm</dimen>
