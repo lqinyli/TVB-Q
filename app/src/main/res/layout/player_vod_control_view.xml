@@ -39,7 +39,7 @@
             android:text="TvInFo"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:textSize="@dimen/ts_28" />
+            android:textSize="@dimen/ts_24" />
 
         </LinearLayout>       //增加片名显示       
         <LinearLayout
