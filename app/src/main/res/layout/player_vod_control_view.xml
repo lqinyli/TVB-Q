@@ -38,6 +38,7 @@
             android:padding="@dimen/vs_5"
             android:text="TvInFo"
             android:textColor="@android:color/white"
+            android:textStyle="bold"
             android:textSize="@dimen/ts_20" />
 
         </LinearLayout>       //增加片名显示       
