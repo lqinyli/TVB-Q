@@ -19,13 +19,11 @@
         android:paddingBottom="@dimen/vs_10"
         android:visibility="gone"
         tools:visibility="visible">
-//增加片名显示        
+//增加片名和时间显示        
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
         android:layout_marginBottom="@dimen/vs_15"
-        android:gravity="left"
         android:orientation="horizontal">
 
         <TextView
@@ -40,8 +38,19 @@
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:textSize="@dimen/ts_24" />
+        <TextView
+            android:id="@+id/tv_info_hint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right" 
+            android:maxLines="1"
+            android:padding="@dimen/vs_5"
+            android:text="Tvdate"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ts_24" /> 
 
-        </LinearLayout>       //增加片名显示       
+        </LinearLayout>       //增加片名和时间显示       
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
