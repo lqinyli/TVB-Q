@@ -26,7 +26,8 @@ import com.github.tvbox.osc.util.PlayerHelper;
 import com.orhanobut.hawk.Hawk;
 import com.owen.tvrecyclerview.widget.TvRecyclerView;
 import com.owen.tvrecyclerview.widget.V7LinearLayoutManager;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -56,6 +57,7 @@ public class VodController extends BaseController {
                     case 1002: { // 显示底部菜单
                         mBottomRoot.setVisibility(VISIBLE);
                         mBottomRoot.requestFocus();
+                        setHint();
                         break;
                     }
                     case 1003: { // 隐藏底部菜单
@@ -90,6 +92,7 @@ public class VodController extends BaseController {
     LinearLayout mParseRoot;
     TvRecyclerView mGridView;
     TextView mPlayTitle;
+    TextView mPlayHint;
     TextView mNextBtn;
     TextView mPreBtn;
     TextView mPlayerScaleBtn;
@@ -112,6 +115,7 @@ public class VodController extends BaseController {
         mCurrentTime = findViewById(R.id.curr_time);
         mTotalTime = findViewById(R.id.total_time);
         mPlayTitle = findViewById(R.id.tv_info_name);
+        mPlayHint = findViewById(R.id.tv_info_hint);
         mSeekBar = findViewById(R.id.seekBar);
         mProgressRoot = findViewById(R.id.tv_progress_container);
         mProgressIcon = findViewById(R.id.tv_progress_icon);
@@ -474,7 +478,17 @@ public class VodController extends BaseController {
     public void setTitle(String playTitleInfo) {
         mPlayTitle.setText(playTitleInfo);
     }
+    public void setHint(String hint) {
+        mPlayHint.setText(hint);
+    }
 
+    public void setHint() {
+        Date date = new Date();
+        String strDateFormat = "yyyy/MM/dd HH:mm";
+        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+        String now = sdf.format(date);
+        setHint(now);
+    }
     public void resetSpeed() {
         skipEnd = true;
         mHandler.removeMessages(1004);
