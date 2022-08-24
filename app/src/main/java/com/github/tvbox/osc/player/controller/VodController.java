@@ -1,5 +1,6 @@
 package com.github.tvbox.osc.player.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -92,6 +93,8 @@ public class VodController extends BaseController {
     LinearLayout mParseRoot;
     TvRecyclerView mGridView;
     TextView mPlayTitle;
+    TextView mPlayTitles;
+    TextView tvDate;
     TextView mPlayHint;
     TextView mNextBtn;
     TextView mPreBtn;
@@ -104,7 +107,21 @@ public class VodController extends BaseController {
     TextView mPlayerTimeStartBtn;
     TextView mPlayerTimeSkipBtn;
     TextView mPlayerTimeStepBtn;
+    private boolean shouldShowBottom = true;
+    
+    private Runnable mRunnable = new Runnable() {
+        @SuppressLint({"DefaultLocale", "SetTextI18n"})
+        @Override
+        public void run() {
+            Date date = new Date();
+            @SuppressLint("SimpleDateFormat")
+            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            tvDate.setText(timeFormat.format(date));
 
+
+            mHandler.postDelayed(this, 1000);
+        }
+    };
     Handler myHandle;
     Runnable myRunnable;
     int myHandleSeconds = 8000;//闲置多少毫秒秒关闭底栏  默认8秒
@@ -115,6 +132,8 @@ public class VodController extends BaseController {
         mCurrentTime = findViewById(R.id.curr_time);
         mTotalTime = findViewById(R.id.total_time);
         mPlayTitle = findViewById(R.id.tv_info_name);
+        mPlayTitles = findViewById(R.id.tv_info_names);
+        tvDate = findViewById(R.id.tv_info_time);
         mPlayHint = findViewById(R.id.tv_info_hint);
         mSeekBar = findViewById(R.id.seekBar);
         mProgressRoot = findViewById(R.id.tv_progress_container);
@@ -435,7 +454,20 @@ public class VodController extends BaseController {
                 updatePlayerCfgView();
             }
         });
+        tvDate.post(new Runnable() {
+            @Override
+            public void run() {
+                mHandler.post(mRunnable);
+            }
+        });
     }
+    public void enableController(boolean enable) {
+        this.shouldShowBottom = enable;
+        this.tvDate.setVisibility(enable ? VISIBLE : GONE );
+        setDoubleTapTogglePlayEnabled(enable);
+        setGestureEnabled(enable);
+    }
+
 
     @Override
     protected int getLayoutId() {
@@ -477,6 +509,7 @@ public class VodController extends BaseController {
 
     public void setTitle(String playTitleInfo) {
         mPlayTitle.setText(playTitleInfo);
+        mPlayTitles.setText(playTitleInfo);
     }
     public void setHint(String hint) {
         mPlayHint.setText(hint);
@@ -630,13 +663,23 @@ public class VodController extends BaseController {
     }
 
     void showBottom() {
-        mHandler.removeMessages(1003);
-        mHandler.sendEmptyMessage(1002);
+        if(this.shouldShowBottom) {
+            mHandler.removeMessages(1003);
+            mHandler.sendEmptyMessage(1002);
+            mHandler.postDelayed(mHideBottomRunnable, 10000);
+        }
     }
 
+    Runnable mHideBottomRunnable = new Runnable() {
+        @Override
+        public void run() {
+            hideBottom();
+        }
+    };
     void hideBottom() {
         mHandler.removeMessages(1002);
         mHandler.sendEmptyMessage(1003);
+        mHandler.removeCallbacks(mHideBottomRunnable);
     }
 
     @Override
@@ -648,6 +691,8 @@ public class VodController extends BaseController {
         int keyCode = event.getKeyCode();
         int action = event.getAction();
         if (isBottomVisible()) {
+            mHandler.removeCallbacks(mHideBottomRunnable);
+            mHandler.postDelayed(mHideBottomRunnable, 10000);
             myHandle.postDelayed(myRunnable, myHandleSeconds);
             return super.dispatchKeyEvent(event);
         }
@@ -685,6 +730,10 @@ public class VodController extends BaseController {
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
         myHandle.removeCallbacks(myRunnable);
+        if(!shouldShowBottom) {
+            togglePlay();
+            return true;
+        }
         if (!isBottomVisible()) {
             showBottom();
             // 闲置计时关闭
