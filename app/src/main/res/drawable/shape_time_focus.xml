@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    暂停时间和集数背景颜色-->
+    <corners
+        android:bottomRightRadius="@dimen/vs_10"
+        android:bottomLeftRadius="@dimen/vs_10" />
+    <gradient
+    android:startColor="@color/color_D9060606"
+    android:centerColor="@color/color_80060606"          
+    android:endColor="@color/color_08060606"
+    android:angle="270"/>    
+</shape>
