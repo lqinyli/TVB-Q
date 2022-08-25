@@ -6,6 +6,7 @@ import android.os.Message;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -59,10 +60,28 @@ public class VodController extends BaseController {
                     }
                     case 1002: { // 显示底部菜单
                         mBottomRoot.setVisibility(VISIBLE);
+                        TranslateAnimation animate = new TranslateAnimation(
+                                0,                // fromXDelta
+                                0,                  // toXDelta
+                                mBottomRoot.getHeight(),    // fromYDelta
+                                0);                 // toYDelta
+                        animate.setDuration(400);
+                        animate.setFillAfter(true);
+                        mBottomRoot.startAnimation(animate);
                         mBottomRoot.requestFocus();
                         break;
                     }
                     case 1003: { // 隐藏底部菜单
+                        TranslateAnimation animate = new TranslateAnimation(
+                                0,                 // fromXDelta
+                                0,                   // toXDelta
+                                0,                 // fromYDelta
+                                //mBottomRoot.getHeight());  // toYDelta
+                                // takagen99: Quick fix VOD controller shows after PIP
+                                1200);
+                        animate.setDuration(800);
+                        animate.setFillAfter(true);
+                        mBottomRoot.startAnimation(animate);
                         mBottomRoot.setVisibility(GONE);
                         break;
                     }
@@ -165,7 +184,6 @@ public class VodController extends BaseController {
         mPlayPauseTime = findViewById(R.id.tv_sys_time);
         mPlayLoadNetSpeed = findViewById(R.id.tv_play_load_net_speed);
         mVideoSize = findViewById(R.id.tv_videosize);
-
         myHandle=new Handler();
         myRunnable = new Runnable() {
             @Override
@@ -347,11 +365,13 @@ public class VodController extends BaseController {
                     updatePlayerCfgView();
                     listener.updatePlayerCfg();
                     listener.replay(false);
+                    view.requestFocus();
 //                    hideBottom();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 mPlayerBtn.requestFocus();
+
             }
         });
         mPlayerIJKBtn.setOnClickListener(new OnClickListener() {
@@ -376,6 +396,7 @@ public class VodController extends BaseController {
                     updatePlayerCfgView();
                     listener.updatePlayerCfg();
                     listener.replay(false);
+                    view.requestFocus();
 //                    hideBottom();
                 } catch (JSONException e) {
                     e.printStackTrace();
