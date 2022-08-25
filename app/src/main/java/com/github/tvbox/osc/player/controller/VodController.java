@@ -184,6 +184,7 @@ public class VodController extends BaseController {
         mPlayPauseTime = findViewById(R.id.tv_sys_time);
         mPlayLoadNetSpeed = findViewById(R.id.tv_play_load_net_speed);
         mVideoSize = findViewById(R.id.tv_videosize);
+        mBottomRoot.setVisibility(INVISIBLE);
         myHandle=new Handler();
         myRunnable = new Runnable() {
             @Override
@@ -224,7 +225,6 @@ public class VodController extends BaseController {
         });
         mGridView.setAdapter(parseAdapter);
         parseAdapter.setNewData(ApiConfig.get().getParseBeanList());
-
         mParseRoot.setVisibility(VISIBLE);
 
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
