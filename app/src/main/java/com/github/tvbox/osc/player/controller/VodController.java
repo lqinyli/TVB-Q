@@ -1,6 +1,5 @@
 package com.github.tvbox.osc.player.controller;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -27,13 +26,16 @@ import com.github.tvbox.osc.util.PlayerHelper;
 import com.orhanobut.hawk.Hawk;
 import com.owen.tvrecyclerview.widget.TvRecyclerView;
 import com.owen.tvrecyclerview.widget.V7LinearLayoutManager;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+
+import java.util.Date;
 
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.PlayerUtils;
@@ -58,7 +60,6 @@ public class VodController extends BaseController {
                     case 1002: { // 显示底部菜单
                         mBottomRoot.setVisibility(VISIBLE);
                         mBottomRoot.requestFocus();
-                        setHint();
                         break;
                     }
                     case 1003: { // 隐藏底部菜单
@@ -95,7 +96,6 @@ public class VodController extends BaseController {
     TextView mPlayTitle;
     TextView mPlayTitles;
     TextView tvDate;
-    TextView mPlayHint;
     TextView mNextBtn;
     TextView mPreBtn;
     TextView mPlayerScaleBtn;
@@ -107,24 +107,34 @@ public class VodController extends BaseController {
     TextView mPlayerTimeStartBtn;
     TextView mPlayerTimeSkipBtn;
     TextView mPlayerTimeStepBtn;
-    private boolean shouldShowBottom = true;
+    TextView mPlayPauseTime;
+    TextView mPlayLoadNetSpeed;
+    TextView mVideoSize;
+ 
     
-    private Runnable mRunnable = new Runnable() {
-        @SuppressLint({"DefaultLocale", "SetTextI18n"})
+
+    Handler myHandle;
+    Runnable myRunnable;
+    int myHandleSeconds = 8000;//闲置多少毫秒秒关闭底栏  默认8秒
+
+    private Runnable myRunnable2 = new Runnable() {
         @Override
         public void run() {
             Date date = new Date();
-            @SuppressLint("SimpleDateFormat")
             SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            mPlayPauseTime.setText(timeFormat.format(date));
             tvDate.setText(timeFormat.format(date));
+            mPlayLoadNetSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
 
+            String width = Integer.toString(mControlWrapper.getVideoSize()[0]);
+            String height = Integer.toString(mControlWrapper.getVideoSize()[1]);
+            mVideoSize.setText("[ " + width + " X " + height +" ]");
 
             mHandler.postDelayed(this, 1000);
         }
     };
-    Handler myHandle;
-    Runnable myRunnable;
-    int myHandleSeconds = 8000;//闲置多少毫秒秒关闭底栏  默认8秒
+
+
 
     @Override
     protected void initView() {
@@ -134,7 +144,6 @@ public class VodController extends BaseController {
         mPlayTitle = findViewById(R.id.tv_info_name);
         mPlayTitles = findViewById(R.id.tv_info_names);
         tvDate = findViewById(R.id.tv_info_time);
-        mPlayHint = findViewById(R.id.tv_info_hint);
         mSeekBar = findViewById(R.id.seekBar);
         mProgressRoot = findViewById(R.id.tv_progress_container);
         mProgressIcon = findViewById(R.id.tv_progress_icon);
@@ -153,6 +162,9 @@ public class VodController extends BaseController {
         mPlayerTimeStartBtn = findViewById(R.id.play_time_start);
         mPlayerTimeSkipBtn = findViewById(R.id.play_time_end);
         mPlayerTimeStepBtn = findViewById(R.id.play_time_step);
+        mPlayPauseTime = findViewById(R.id.tv_sys_time);
+        mPlayLoadNetSpeed = findViewById(R.id.tv_play_load_net_speed);
+        mVideoSize = findViewById(R.id.tv_videosize);
 
         myHandle=new Handler();
         myRunnable = new Runnable() {
@@ -161,6 +173,21 @@ public class VodController extends BaseController {
                 hideBottom();
             }
         };
+
+
+        mPlayPauseTime.post(new Runnable() {
+            @Override
+            public void run() {
+                mHandler.post(myRunnable2);
+            }
+        });
+
+        tvDate.post(new Runnable() {
+            @Override
+            public void run() {
+                mHandler.post(myRunnable2);
+            }
+        });
 
         mGridView.setLayoutManager(new V7LinearLayoutManager(getContext(), 0, false));
         ParseAdapter parseAdapter = new ParseAdapter();
@@ -454,19 +481,9 @@ public class VodController extends BaseController {
                 updatePlayerCfgView();
             }
         });
-        tvDate.post(new Runnable() {
-            @Override
-            public void run() {
-                mHandler.post(mRunnable);
-            }
-        });
+
     }
-    public void enableController(boolean enable) {
-        this.shouldShowBottom = enable;
-        this.tvDate.setVisibility(enable ? VISIBLE : GONE );
-        setDoubleTapTogglePlayEnabled(enable);
-        setGestureEnabled(enable);
-    }
+
 
 
     @Override
@@ -511,17 +528,7 @@ public class VodController extends BaseController {
         mPlayTitle.setText(playTitleInfo);
         mPlayTitles.setText(playTitleInfo);
     }
-    public void setHint(String hint) {
-        mPlayHint.setText(hint);
-    }
 
-    public void setHint() {
-        Date date = new Date();
-        String strDateFormat = "yyyy/MM/dd HH:mm";
-        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
-        String now = sdf.format(date);
-        setHint(now);
-    }
     public void resetSpeed() {
         skipEnd = true;
         mHandler.removeMessages(1004);
@@ -648,9 +655,11 @@ public class VodController extends BaseController {
                 break;
             case VideoView.STATE_PREPARED:
             case VideoView.STATE_BUFFERED:
+                mPlayLoadNetSpeed.setVisibility(GONE);
                 break;
             case VideoView.STATE_PREPARING:
             case VideoView.STATE_BUFFERING:
+                mPlayLoadNetSpeed.setVisibility(VISIBLE);
                 break;
             case VideoView.STATE_PLAYBACK_COMPLETED:
                 listener.playNext(true);
@@ -663,23 +672,15 @@ public class VodController extends BaseController {
     }
 
     void showBottom() {
-        if(this.shouldShowBottom) {
-            mHandler.removeMessages(1003);
-            mHandler.sendEmptyMessage(1002);
-            mHandler.postDelayed(mHideBottomRunnable, 10000);
-        }
+        mHandler.removeMessages(1003);
+        mHandler.sendEmptyMessage(1002);
     }
 
-    Runnable mHideBottomRunnable = new Runnable() {
-        @Override
-        public void run() {
-            hideBottom();
-        }
-    };
+
     void hideBottom() {
         mHandler.removeMessages(1002);
         mHandler.sendEmptyMessage(1003);
-        mHandler.removeCallbacks(mHideBottomRunnable);
+
     }
 
     @Override
@@ -691,8 +692,6 @@ public class VodController extends BaseController {
         int keyCode = event.getKeyCode();
         int action = event.getAction();
         if (isBottomVisible()) {
-            mHandler.removeCallbacks(mHideBottomRunnable);
-            mHandler.postDelayed(mHideBottomRunnable, 10000);
             myHandle.postDelayed(myRunnable, myHandleSeconds);
             return super.dispatchKeyEvent(event);
         }
@@ -730,10 +729,7 @@ public class VodController extends BaseController {
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
         myHandle.removeCallbacks(myRunnable);
-        if(!shouldShowBottom) {
-            togglePlay();
-            return true;
-        }
+
         if (!isBottomVisible()) {
             showBottom();
             // 闲置计时关闭
