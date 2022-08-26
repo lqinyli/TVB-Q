@@ -38,6 +38,7 @@
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:textSize="@dimen/ts_20" />
+</LinearLayout>        
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
