@@ -37,7 +37,24 @@
             android:text="TvInFo"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:textSize="@dimen/ts_24" />
+            android:textSize="@dimen/ts_20" />
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/vs_15"
+        android:orientation="horizontal">
+        <TextView
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ellipsize="marquee"
+            android:maxLines="1"
+            android:padding="@dimen/vs_5"
+            android:text="👆👆正在播放的是👆👆           当前时间是∶"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/ts_20" />
         <TextView
             android:id="@+id/tv_info_time"
             android:layout_width="fill_parent"
@@ -48,7 +65,7 @@
             android:text="Tvdate"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_24" /> 
+            android:textSize="@dimen/ts_20" /> 
 
         </LinearLayout>       //增加片名和时间显示       
         <LinearLayout
@@ -67,7 +84,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text=" 下一集 "
+                android:text="下集"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_16" />
 
@@ -80,7 +97,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text=" 上一集 "
+                android:text="上集"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_16" />
 
@@ -93,7 +110,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text="重播本集"
+                android:text="重播"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_16" />
             
@@ -106,7 +123,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text=" 刷新 "
+                android:text="刷新"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_16" />
 
@@ -168,7 +185,7 @@
                 android:layout_marginEnd="@dimen/vs_5"
                 android:layout_marginRight="@dimen/vs_5"
                 android:padding="@dimen/vs_10"
-                android:text="   跳过片头片尾"
+                android:text="   片头尾"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_16" />
 
@@ -220,7 +237,7 @@
                 android:background="@drawable/button_dialog_main"
                 android:focusable="true"
                 android:padding="@dimen/vs_10"
-                android:text="重置"
+                android:text="⇔"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_16" />
         </LinearLayout>
@@ -339,7 +356,7 @@
                     android:text="http://"
                     android:textStyle="bold"                     
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/ts_24" />
+                    android:textSize="@dimen/ts_20" />
                 <TextView
                     android:id="@+id/tv_videosize"
                     android:layout_width="wrap_content"
@@ -352,7 +369,7 @@
                     android:text="[ 1024 x 768 ]"
                     android:textStyle="bold"   
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/ts_24" />
+                    android:textSize="@dimen/ts_20" />
             </LinearLayout>	
             <TextView
                 android:id="@+id/tv_sys_time"
@@ -368,7 +385,7 @@
                 android:textStyle="bold"  
                 android:text="00:00:00"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/ts_24" />	
+                android:textSize="@dimen/ts_20" />	
 
         </LinearLayout>       //增加片名和时间显示    
     
