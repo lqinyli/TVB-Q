@@ -43,16 +43,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/vs_15"
+        android:gravity="center"
         android:orientation="horizontal">
         <TextView
             
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            
             android:ellipsize="marquee"
             android:maxLines="1"
             android:padding="@dimen/vs_5"
-            android:text="👆👆正在播放的是👆👆           当前时间是∶"
+            android:text="当前时间是∶"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:textSize="@dimen/ts_20" />
@@ -60,7 +61,7 @@
             android:id="@+id/tv_info_time"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="right" 
+            
             android:maxLines="1"
             android:padding="@dimen/vs_5"
             android:text="Tvdate"
@@ -73,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/vs_10"
-            android:gravity="center"
+            android:gravity="left"
             android:orientation="horizontal">
 
             <TextView
