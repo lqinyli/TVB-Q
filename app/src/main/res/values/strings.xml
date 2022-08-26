@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  app名称   -->
-    <string name="app_name">TVBox</string>
-    <string name="hm_date1">yyyy年 MM月 dd日</string>
-    <string name="hm_date2">EE hh:mm aa</string>       
+    <string name="app_name">STV</string>
+    <string name="hm_date1">yyyy年MM月dd日</string>
+    <string name="hm_date2">EE HH:mm:ss</string>       
 </resources>
