@@ -140,7 +140,7 @@ public class VodController extends BaseController {
         @Override
         public void run() {
             Date date = new Date();
-            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy年MM月dd日 EE HH:mm:ss");
             mPlayPauseTime.setText(timeFormat.format(date));
             tvDate.setText(timeFormat.format(date));
             mPlayLoadNetSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
