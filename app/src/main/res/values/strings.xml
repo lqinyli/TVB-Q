@@ -3,5 +3,5 @@
     <!--  app名称   -->
     <string name="app_name">STV</string>
     <string name="hm_date1">yyyy年MM月dd日</string>
-    <string name="hm_date2">" "+EE HH:mm:ss</string>       
+    <string name="hm_date2">" "EE HH:mm:ss</string>       
 </resources>
