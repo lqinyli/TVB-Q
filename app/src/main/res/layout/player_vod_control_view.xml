@@ -49,11 +49,11 @@
             
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
+            android:gravity="left"
             android:ellipsize="marquee"
             android:maxLines="1"
             android:padding="@dimen/vs_5"
-            android:text="当前时间是∶"
+            android:text="正在播放∶"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:textSize="@dimen/ts_20" />
@@ -61,10 +61,11 @@
             android:id="@+id/tv_info_time"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            
+            android:gravity="right"
+            android:ellipsize="end"
             android:maxLines="1"
             android:padding="@dimen/vs_5"
-            android:text="Tvdate"
+            android:text=""当前时间是"+Tvdate"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ts_20" /> 
