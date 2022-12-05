@@ -21,7 +21,6 @@ jobs:
          bash ${{ github.workspace }}/stv-py.sh 
       - name: Build With Gradle        
         run: |
-      
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
           DIR=$(find ${{ github.workspace }} -name gradlew  | cut -d \/ -f$num)
           cd $DIR
