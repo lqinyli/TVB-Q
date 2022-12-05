@@ -14,8 +14,17 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Build With Gradle
+      #DIY自定义图标背景接口内置等等
+      - name: DIY
         run: |
+         chmod +x stv-py.sh
+         bash ${{ github.workspace }}/stv-py.sh 
+      - name: Build With Gradle        
+        run: |
+      
+          num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
+          DIR=$(find ${{ github.workspace }} -name gradlew  | cut -d \/ -f$num)
+          cd $DIR
           chmod +x gradlew
           ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
       - name: Prepare App
